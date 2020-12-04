@@ -30,5 +30,5 @@ main :: IO ()
 main = do
     input <- readFile "input.txt"
     let parsedInput = parseInput input 
-    print $ (show . firstTask) parsedInput
-    print $ (show . secondTask) parsedInput
+    print $ firstTask parsedInput
+    print $ secondTask parsedInput

@@ -23,5 +23,5 @@ secondTask input = product [solveTask input m n | (m, n) <- [(1, 1), (3, 1), (5,
 main = do
     input <- readFile "input.txt"
     let parsedInput = parseInput input
-    print $ (show . firstTask) parsedInput
-    print $ (show . secondTask) parsedInput
+    print $ firstTask parsedInput
+    print $ secondTask parsedInput
