@@ -22,11 +22,10 @@ contain rulesMap str (left, right) = str == left || any (contain rulesMap str) i
                                      where
                                        insideRules = map (\(_, y) -> (y, rulesMap ! y)) right
 
-
 firstTask :: RulesMap -> String -> Int
 firstTask rulesMap x = foldWithKey f 0 rulesMap - 1
-            where
-              f k v acc = if contain rulesMap x (k, v) then acc + 1 else acc
+                       where
+                         f k v acc = if contain rulesMap x (k, v) then acc + 1 else acc
 
 secondTask :: RulesMap -> String -> Int
 secondTask rulesMap x = sum $ map calculate right
