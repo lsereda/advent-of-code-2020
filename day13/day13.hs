@@ -33,8 +33,8 @@ euclidean a b = helper a b 1 0 0 1
 snd3 :: (a, a, a) -> a
 snd3 (_, x, _) = x
 
-solveChineseRestTheorem :: [(Integer, Integer)] -> Integer
-solveChineseRestTheorem list = sum (map factor list) `mod` numbersProduct
+solveChineseRemainderTheorem :: [(Integer, Integer)] -> Integer
+solveChineseRemainderTheorem list = sum (map factor list) `mod` numbersProduct
                                where
                                  numbers        = map snd list
                                  numbersProduct = product numbers
@@ -42,7 +42,7 @@ solveChineseRestTheorem list = sum (map factor list) `mod` numbersProduct
                                  coeff x        = numbersProduct `div` x
 
 secondTask :: (Integer, [String]) -> Integer
-secondTask input = solveChineseRestTheorem coeffs
+secondTask input = solveChineseRemainderTheorem coeffs
                    where
                      coeffs = parseSecondTaskInput input
 
